@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8 rounded shadow m-5 bg-info-subtle ">
+            <form #myForm="ngForm" (ngSubmit)="OnSubmit(myForm)" >
+                <h2 class="fw-bolder text-center text-primary ">Template Driven Form</h2>
+                <div class="form-group">
+                    <label for="FirstName">Enter First Name :</label>
+                    <input type="text" class="form-control" placeholder="Enter First Name" name="firstName" #fName="ngModel" [(ngModel)]="firstName" ngModel maxlength="100" minlength="4" required>
+                    <small *ngIf="fName.touched && fName.errors">
+                        <small class="text-danger" *ngIf="fName.errors['required']">First name is Required!!!</small>
+                        <!-- <small *ngIf="fName.errors['maxlength']">Maximum length is 100</small> -->
+                        <small class="text-danger" *ngIf="fName.errors['minlength']">minimum length is 4</small>
+                    </small>
+                </div>
+                <div class="form-group">
+                    <label for="LastName">Enter Last Name :</label>
+                    <input type="text" class="form-control" placeholder="Enter Last Name" name="lastName" ngModel>
+                </div>
+
+            <div ngModelGroup="address">
+                <div class="row">
+                    <div class="form-group">
+                        <label for="LastName">Enter Email :</label>
+                        <input type="text" class="form-control" placeholder="Enter Email" name="Email" ngModel>
+                    </div>
+                </div>
+            </div>
+                <button [disabled]="!myForm.valid" type="submit" class="btn btn-info my-3">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+button{
+    margin-left: 150px;
+}
+
+span{
+    margin-left: 170px;
+}
+
+p{
+    margin-left: 140px;
+}
+
+input.ng-touched.ng-invalid{
+    border: 1px rgb(238, 32, 32);
+    box-shadow: 0 0 12px rgb(235, 40, 40);
+}

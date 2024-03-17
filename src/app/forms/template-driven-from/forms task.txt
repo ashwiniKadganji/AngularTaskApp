@@ -1,0 +1,66 @@
+// using template Driven Form , reactive form and form builder
+
+ 1. disable button, button hover, delete button , 
+
+ 2. validation 
+- email
+- name
+- skills
+- custom validation - age limit
+- password match
+- gender 
+- password 
+- minlength and maxlength
+- contry validation +91 --
+
+- create nested gorm Group
+- create dynamic form controls using formArray
+
+
+
+// show data on browser 
+
+set value and patch value
+
+
+
+Forms : 
+>> forms are using to handle the user input data.
+>> There are 2 types of forms are available in angular
+1. Template Driven Form
+2. Reactive Form
+
+1. Template Driven Form:
+
+- Template driven is used for creating simple and small forms like login, registration form etc.
+- If we use template driven from we need to impoprt FormsModel in appModule file.
+- Template driven form support two-way data binding [(ngModule)].
+- When create Template Driven Form we use built-in directives like ngForm and NgModel with name Attribute.
+NgForm - it is bind itself to html <form>.
+       - it is used for create top level instance of FormGroup.  
+NgModel: - it is used to create instance of form control and name attribute is used to create or register control for each of the form feilds.
+
+- In template driven form most of the code or logic we can write inside the html file.
+- we can also create nested form group in template driven form using inbuilt directive ngModelGroup.
+- Template driven form is asynchronous.
+
+2. Reactive Form:
+
+- Reactive form is also known as Model Driven Form.
+- Reactive fomr is used to handle the user input data.
+- When we have requirement of create complex form we can use the reactive form or reactive form is used to create complex forms like Bank account form, student addmission form etc.
+- Reactive form not support two way data binding [(ngModule)].
+- When create Reactive form we need to import reactiveFormsModule in appmodule file.
+- Reactive form is synchronous.
+- When create reactive form we use inbuilt directives like formGroup and FormControlName .
+- if we create nested formGroup in reactive form then use inbuilt directive FormGroupName.
+- if we create dynamic form controls using inbuilt directive formArray.
+- Most of the code we can write in typescript file.
+
+FormGroup - formGroup is collection of formControls.
+formcontrols - Fromcontrol is instance of values of 
+
+3.Form Builder: 
+- we can create forms also using Form Biuilder.
+- form builder is nothing but helper API to build or create forms / model.
+- Form builder provides shortcuts to create instance of formgroup, formarray and formcontrols.

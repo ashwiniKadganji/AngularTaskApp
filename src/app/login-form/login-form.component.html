@@ -1,0 +1,29 @@
+<div class="container px-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 rounded my-5 bg-dark shadow-lg px-5 ">
+            <form #myForm="ngForm" (ngSubmit)="login(myForm)" >
+
+                <h3 class="text-warning text-center mt-5 text-decoration-underline text-uppercase ">Login</h3>
+
+                <div class="formgroup">
+                <!-- <label for="email" class="text-warning" >Email :</label> -->
+                <input type="text" class="form-control my-4" #eml placeholder="Enter Your Email" name="email" email ngModel #emails="ngModel"  required>
+                <small class="text-danger" *ngIf="emails.touched && emails.errors">
+                    <small *ngIf="emails.errors['required']">Email is Required feild!!</small>
+                    <small *ngIf="emails.errors['email']">Email is not valid!!</small>
+                </small>
+                </div>
+               
+                <div class="formgroup">
+                    <!-- <label for="Password" class="text-warning">Password :</label> -->
+                    <input type="text" class="form-control my-4" #pwd placeholder="Enter Your Password" name="password" ngModel required>
+                </div>
+
+                    <button [disabled]="!myForm.valid" type="submit" class="btn btn-warning my-2 " (submit)="login">Login</button><br>
+                    <span class="text-warning">OR</span>
+                    <p class="text-warning text-decoration-underline mb-5" routerLink="/create-account">Create Account</p> 
+            </form>
+        </div>
+    </div>
+</div>
+
