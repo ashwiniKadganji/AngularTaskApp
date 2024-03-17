@@ -1,0 +1,51 @@
+<div class="container-fluid" >
+    <div class="row justify-content-center border-2 table-bordered p-5 m-5 bg-secondary-subtle shadow-lg ">
+        <h2 class="text-center fw-bolder">News Data</h2>
+    <table class="bg-dark text-warning">
+        <thead class="text-center fw-bolder fs-5 p-3 mb-2  bg-secondary text-light ">
+          <tr>
+            <th>Title</th>
+            <th>Publisher</th>
+            
+          </tr>
+        </thead>
+        <tbody *ngFor="let newss of newsData" class="p-3">
+            <tr>
+              
+                <td>{{newss.title}}</td>
+                <td>{{newss.publisher}}</td>
+               
+            </tr>
+        </tbody>
+    </table>
+    </div>
+</div>
+
+<hr>
+
+<div class="container">
+    <div class="row justify-content-center border-2 table-bordered p-5 m-5 bg-danger-subtle shadow-lg ">
+    <h2 class="text-center fw-bolder ">Quotes Data</h2>
+    <table class="bg-dark text-warning">
+        <thead class="text-center fw-bolder fs-5 p-3 bg-secondary text-light ">
+          <tr>
+            <th>Exchange</th>
+            <th>Shortname</th>
+            <th>QuoteType</th>
+            <th>Symbol</th>
+            
+          </tr>
+        </thead>
+        <tbody *ngFor="let quotes of quotesData">
+            <tr>
+              
+                <td>{{quotes.exchange}}</td>
+                <td>{{quotes.shortname}}</td>
+                <td>{{quotes.quoteType}}</td>
+                <td>{{quotes.symbol}}</td>
+
+            </tr>
+        </tbody>
+    </table>
+    </div>
+</div>

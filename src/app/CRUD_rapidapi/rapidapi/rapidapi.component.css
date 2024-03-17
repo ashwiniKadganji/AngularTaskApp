@@ -1,0 +1,7 @@
+th,td,tr{
+    padding: 15px;
+    border:1px solid white;
+}
+h2{
+    text-transform: capitalize;
+}
