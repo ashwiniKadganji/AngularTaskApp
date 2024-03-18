@@ -1,0 +1,23 @@
+<h1>Async pipe</h1>
+<p>perform without subscribe observable create observable using async pipe</p>
+<ul>
+     <li *ngFor = "let number of numbers$ | async ">
+       {{number}}
+     </li>
+</ul>
+
+
+
+
+<div class="container m-5">
+    <div class="row justify-content-center shadow  bg-warning-subtle border-warning  m-5 p-5 ">
+        <h1>Async Pipe and Promise</h1>
+        <p>Using promises with async pipe get data on browser .</p>
+        <h4>Fruit List</h4>
+        <ul>
+            <li *ngFor = "let item of data$ | async ">
+              {{item}}
+            </li>
+        </ul>
+    </div>
+</div>
