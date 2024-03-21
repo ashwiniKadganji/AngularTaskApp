@@ -1,0 +1,41 @@
+<div class="container m-3 ">
+    <div class="row justify-content-center m-2">
+   <div class="row">
+    <div class="col-md-8">
+        <label for=""><strong>Search Data by Name:</strong></label>
+    <input type="text" placeholder="Search user name" class="form-control" [(ngModel)]="namesearch">
+
+    <div class="col-md-4">
+        <button type="button" class="btn btn-outline-success">Search</button>
+    </div>
+    </div>
+   </div>
+    
+    <div class="col-md-12">
+        <table class='table'>
+
+            <thead>
+           <th>ID</th>
+            <th>Name</th>
+            <th>UserName</th>
+            <th>Email</th>
+            </thead>
+
+            <tbody>
+                <ng-container *ngFor="let user of users | filter: namesearch">
+                <tr *ngIf="user.message !== 'Data not found'">
+                    <td>{{user.id}}</td>
+                    <td>{{user.name}}</td>
+                    <td>{{user.username}}</td>
+                    <td>{{user.email}}</td>   
+                </tr>
+            </ng-container>
+            </tbody>
+
+        </table>
+
+    </div>
+    </div>
+</div>
+
+

@@ -14,12 +14,14 @@ export class AsyncpipeserviceService {
    }
 
   
-   fetchData(): Promise<string[]> {
+   fetchData(): Promise<any[]> {
     return new Promise((resolve, reject) => {
       // Simulating asynchronous data fetching
       setTimeout(() => {
-        const data = ['Mango', 'Banana', 'Strawbery', 'Grapes'];
+        const data = ['Mango', 'Banana', 'Strawbery', 'Grapes',2,4,5,6,7,8];
         resolve(data);
+        const datas = ['Angular', 'Banglore', 'Pune', 'Lavanya',2,4,5,6,7,8.23,['ashu','renu']];
+        resolve(datas);
       }, 2000); // Simulated delay of 2 seconds
     });
   }

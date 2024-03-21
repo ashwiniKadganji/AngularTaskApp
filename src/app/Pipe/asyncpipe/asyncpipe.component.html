@@ -14,10 +14,13 @@
         <h1>Async Pipe and Promise</h1>
         <p>Using promises with async pipe get data on browser .</p>
         <h4>Fruit List</h4>
+        
+
+        <h4>Data</h4>
         <ul>
-            <li *ngFor = "let item of data$ | async ">
-              {{item}}
-            </li>
-        </ul>
+          <li *ngFor = "let items of datas$ | async ">
+            {{items}}
+          </li>
+      </ul>
     </div>
 </div>

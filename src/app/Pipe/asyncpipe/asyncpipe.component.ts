@@ -13,13 +13,17 @@ export class AsyncpipeComponent implements OnInit {
   numbers$!: Observable<number[]>;
 
   // using promise get array data
-  data$!: Promise<string[]>;
+  // data$!: Promise<number[]>;
+  // data$!: Promise<string[]>;
+  data$!: Promise<any[]>;
+  datas$!: Promise<any[]>;
 
   constructor(private _asyncPipeService : AsyncpipeserviceService) { }
 
   ngOnInit(): void {
     this.numbers$ = this._asyncPipeService.getnumbers();
     this.data$ = this._asyncPipeService.fetchData();
+    this.datas$ = this._asyncPipeService.fetchData();
   }
 
 }
