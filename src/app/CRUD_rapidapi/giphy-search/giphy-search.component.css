@@ -1,0 +1,8 @@
+
+h1{
+    text-shadow: 1px 5px 5px rgb(29, 237, 174);
+    /* text-shadow: 1px 5px 5px red; */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bolder;
+    border-color: green;
+}

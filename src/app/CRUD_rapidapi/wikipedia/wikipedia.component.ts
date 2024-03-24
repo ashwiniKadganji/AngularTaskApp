@@ -17,10 +17,8 @@ export class WikipediaComponent implements OnInit {
   }
   search(): void {
     this._wikipediaService.search(this.searchText).subscribe((research: any) => {
-      this.searchResults = research.query.search;
       console.log(research);
-
-      
+      this.searchResults = research.query.search; 
       
     });
   }

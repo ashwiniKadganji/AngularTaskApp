@@ -1,10 +1,10 @@
 .container{
     margin-top: 100px;
-    margin-left: 300px;
+    margin-left: 200px;
 }
 button{
     background-color: rgb(151, 22, 95);
-    font-size: larger;
+    /* font-size: larger; */
 }
 /* table,th,tr,td{
     border: 1px solid black;

@@ -1,0 +1,50 @@
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css" /> -->
+
+<div class="container bg-info-subtle m-5">
+    <div class="row justify-content-center">
+        <h1 class="text-center mt-5 text-info ">GIPHY</h1>
+        <div class="col-md-8">
+            <div class="input-group mb-3 mt-5 shadow-lg ">
+                <input type="text" class="form-control" placeholder="Search GIFs..." aria-label="Recipient's username" aria-describedby="button-addon2" [(ngModel)]="searchText">
+                <button class="btn btn-outline-info fw-bold " type="button" id="button-addon2" (click)="searchGifs()">Search</button>
+              </div>
+        </div>
+
+       
+        <div class="row" *ngFor="let gifs of rows">
+            <div class="col" *ngFor="let gif of gifs | giphy : searchText">
+                <img [src]="gif.images.original.url" alt="{{ gif.title }} " class="img-fluid mb-2">
+            </div>
+        </div>
+       
+
+        <div class="row m-5">
+            <div class="col-md-4">
+                <button (click)="previousPage()" [disabled]="currentPage === 1" class="btn btn-success fw-bold ms-5">Previous</button>
+
+            </div>
+            
+            <div class="col-md-2 offset-5">
+                <button (click)="nextPage()" [disabled]="currentPage * pageSize >= gifs.length" class="btn btn-success fw-bold">Next</button>
+            </div>
+        </div>
+
+        
+
+<!-- 
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+              <li class="page-item" [class.disabled]="currentPage === 1">
+                <a class="page-link" (click)="previousPage()">Previous</a>
+              </li>
+              <li class="page-item" *ngFor="let page of totalPagesArray">
+                <a class="page-link" (click)="goToPage(page)">{{ page }}</a>
+              </li>
+              <li class="page-item" [class.disabled]="currentPage === totalPages">
+                <a class="page-link" (click)="nextPage()">Next</a>
+              </li>
+            </ul>
+          </nav> -->
+
+    </div>
+</div>

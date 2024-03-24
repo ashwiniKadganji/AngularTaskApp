@@ -15,6 +15,13 @@ import { FilterPipe } from './Pipe/filter.pipe';
 import { FilterPipeComponent } from './Pipe/filter-pipe/filter-pipe.component';
 import { FilterWikiPediaPipe } from './Pipe/filter-wiki-pedia.pipe';
 import { WikipediaComponent } from './CRUD_rapidapi/wikipedia/wikipedia.component';
+import { HomeComponent } from './smallApp/home/home.component';
+import { AboutComponent } from './smallApp/about/about.component';
+import { ContactComponent } from './smallApp/contact/contact.component';
+import { PageNotFoundComponent } from './smallApp/page-not-found/page-not-found.component';
+import { GiphySearchComponent } from './CRUD_rapidapi/giphy-search/giphy-search.component';
+import { GiphyPipe } from './Pipe/giphy.pipe';
+import { RegistrationFormComponent } from './forms/registration-form/registration-form.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +34,14 @@ import { WikipediaComponent } from './CRUD_rapidapi/wikipedia/wikipedia.componen
     FilterPipe,
     FilterPipeComponent,
     FilterWikiPediaPipe,
-    WikipediaComponent
+    WikipediaComponent,
+    HomeComponent,
+    AboutComponent,
+    ContactComponent,
+    PageNotFoundComponent,
+    GiphySearchComponent,
+    GiphyPipe,
+    RegistrationFormComponent
   
   ],
   imports: [

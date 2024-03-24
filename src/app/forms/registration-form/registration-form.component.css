@@ -1,0 +1,19 @@
+.rounded{
+    background: linear-gradient(rgb(238, 122, 141),pink,skyblue,rgb(70, 70, 230),blue)
+}
+h1{
+    color: blue;
+}
+span{
+    background-color: white ;
+    width: 120px;
+}
+input.selector,
+input.option,
+input{
+    border: none;
+    border-bottom: 2px solid rgb(112, 111, 111); 
+}
+hr{
+    border: 3px solid black;
+}
