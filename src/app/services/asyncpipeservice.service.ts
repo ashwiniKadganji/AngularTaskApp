@@ -13,7 +13,6 @@ export class AsyncpipeserviceService {
     return of([1,2,3,4,5,6,7]).pipe(delay(1000))
    }
 
-  
    fetchData(): Promise<any[]> {
     return new Promise((resolve, reject) => {
       // Simulating asynchronous data fetching

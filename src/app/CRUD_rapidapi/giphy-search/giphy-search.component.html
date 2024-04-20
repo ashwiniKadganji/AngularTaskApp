@@ -5,20 +5,30 @@
         <h1 class="text-center mt-5 text-info ">GIPHY</h1>
         <div class="col-md-8">
             <div class="input-group mb-3 mt-5 shadow-lg ">
+
                 <input type="text" class="form-control" placeholder="Search GIFs..." aria-label="Recipient's username" aria-describedby="button-addon2" [(ngModel)]="searchText">
                 <button class="btn btn-outline-info fw-bold " type="button" id="button-addon2" (click)="searchGifs()">Search</button>
               </div>
         </div>
 
-       
+        
         <div class="row" *ngFor="let gifs of rows">
             <div class="col" *ngFor="let gif of gifs | giphy : searchText">
-                <img [src]="gif.images.original.url" alt="{{ gif.title }} " class="img-fluid mb-2">
+              <img [src]="gif.images.original.url" alt="{{ gif.title }} " class="img-fluid mb-2">
+            
             </div>
         </div>
+        
+        <mat-paginator [length]="100"
+        [pageSize]="10"
+        [pageSizeOptions]="[5, 10, 25, 100]"
+        aria-label="Select page">
+          
+        </mat-paginator>
        
 
-        <div class="row m-5">
+       
+        <!-- <div class="row m-5">
             <div class="col-md-4">
                 <button (click)="previousPage()" [disabled]="currentPage === 1" class="btn btn-success fw-bold ms-5">Previous</button>
 
@@ -27,7 +37,11 @@
             <div class="col-md-2 offset-5">
                 <button (click)="nextPage()" [disabled]="currentPage * pageSize >= gifs.length" class="btn btn-success fw-bold">Next</button>
             </div>
-        </div>
+        </div> -->
+
+
+
+
 
         
 
@@ -45,6 +59,6 @@
               </li>
             </ul>
           </nav> -->
-
+        
     </div>
 </div>

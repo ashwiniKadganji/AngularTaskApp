@@ -1,0 +1,65 @@
+<!-- <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle-split " routerLink="./mobile" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Mobile
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" routerLink="./oppo">Oppo</a></li>
+              <li><a class="dropdown-item" routerLink="./apple">Apple</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle-split" routerLink="./laptop" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Laptop
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" routerLink="./oppo">Asus </a></li>
+              <li><a class="dropdown-item" routerLink="./apple">Apple </a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle-split" routerLink="./washingMachine" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                WashingMachine
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" routerLink="./oppo">Sony</a></li>
+              <li><a class="dropdown-item" routerLink="./apple">Lenovo</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav> -->
+
+ <div class="navbar-dark shadow border icon-link-hover ">
+    <button mat-button class="fs-6 " [mat-menu-trigger-for]="mobile">Mobile</button>
+    <button mat-button class="fs-6 " [mat-menu-trigger-for]="laptop">Laptop</button>
+    <button mat-button class="fs-6 " [mat-menu-trigger-for]="washingMachine">WashingMachine</button>
+ </div>
+ 
+
+
+  <mat-menu #mobile="matMenu">
+    <button mat-menu-item routerLink="./mobile" routerLinkActive="activate">Mobiles</button>
+    <button mat-menu-item routerLink="./oppoMobile" routerLinkActive="activate">Oppo</button>
+    <button mat-menu-item routerLink="./appleMobile" routerLinkActive="activate">Apple</button>
+  </mat-menu>
+
+  <mat-menu #laptop="matMenu">
+    <button mat-menu-item routerLink="./laptop" routerLinkActive="activate">Laptop</button>
+    <button mat-menu-item routerLink="./dellLaptop" routerLinkActive="activate">Dell</button>
+    <button mat-menu-item routerLink="./asusLaptop" routerLinkActive="activate">Asus</button>
+  </mat-menu>
+
+  <mat-menu #washingMachine="matMenu">
+    <button mat-menu-item routerLink="./washingMachine" routerLinkActive="activate">washingMachine</button>
+    <button mat-menu-item routerLink="./sonyWM" routerLinkActive="activate">Sony</button>
+    <button mat-menu-item routerLink="./HaierWM" routerLinkActive="activate">Haier</button>
+  </mat-menu>
+
+<router-outlet></router-outlet>

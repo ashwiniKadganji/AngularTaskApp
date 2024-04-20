@@ -13,13 +13,11 @@ export class GiphyService {
 
   getGiphy(offset: number = 0, limit: number = 10):Observable<any>{
 
-    //  const headers = {
-    //   'X-RapidAPI-Key': 'jd3PQeuBA7xplOtAWRYiUIdlYAMwIKif',
-      
-    //  }
     return this._httpClient.get(`${this.apiUrl}&offset=${offset}&limit=${limit}`);
   }
   searchGifs(query: string): Observable<any> {
+
     return this._httpClient.get(`${this.apiUrl}`);
+    
   }
 }

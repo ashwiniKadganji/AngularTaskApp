@@ -22,6 +22,19 @@ import { PageNotFoundComponent } from './smallApp/page-not-found/page-not-found.
 import { GiphySearchComponent } from './CRUD_rapidapi/giphy-search/giphy-search.component';
 import { GiphyPipe } from './Pipe/giphy.pipe';
 import { RegistrationFormComponent } from './forms/registration-form/registration-form.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { JsonPlaceHolderComponent } from './JsonPlaceHolder_CRUD/json-place-holder/json-place-holder.component';
+import { LoginComponent } from './smallApp/login/login.component';
+import { PostlistComponent } from './smallApp/postlist/postlist.component';
+import { PostDetailsComponent } from './smallApp/post-details/post-details.component';
+import { MatButtonModule, MatMenuModule } from '@angular/material';
+import { LogoutbtnComponent } from './smallApp/logoutbtn/logoutbtn.component';
+import { ProductsModule } from './smallApp/product/products.module';
+import { BeautyProductComponent } from './smallApp/beauty-product/beauty-product.component';
+import { HookComponent } from './Hook/hook/hook.component';
+import { RxJsComponent } from './RxJs/rx-js/rx-js.component';
+
+
 
 @NgModule({
   declarations: [
@@ -41,18 +54,37 @@ import { RegistrationFormComponent } from './forms/registration-form/registratio
     PageNotFoundComponent,
     GiphySearchComponent,
     GiphyPipe,
-    RegistrationFormComponent
+    RegistrationFormComponent,
+    JsonPlaceHolderComponent,
+    LoginComponent,
+    PostlistComponent,
+    PostDetailsComponent,
+    LogoutbtnComponent,
+    BeautyProductComponent,
+    HookComponent,
+    RxJsComponent
   
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    BrowserAnimationsModule,
     ReactiveFormsModule,
     FormsModule,
-    BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatPaginatorModule,
+    MatMenuModule,
+    MatButtonModule,
+    AppRoutingModule,
+    
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+
+  constructor(){
+    console.log('appModule called');
+    
+  }
+}

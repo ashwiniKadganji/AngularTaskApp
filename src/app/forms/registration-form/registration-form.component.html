@@ -1,80 +1,80 @@
 <div class="container">
     <div class="row justify-content-center ">
-        <div class="col-md-8 rounded m-5 shdow p-5 ">
+        <div class="col-md-8 rounded m-3 shdow p-3 ">
             <form #myForm="ngForm" (ngSubmit)="OnSubmit(myForm)" >
 
                 <img src="https://thumbs.dreamstime.com/z/print-173909049.jpg" alt="university logo" height="100" width="100px" class="rounded-circle ">
 
                 <p class="fw-bold ">Wadia College, Pune 411022 <br>Tel No: 123-123, E: infoWadia@tech.co </p>
 
-                <h1 class="fw-bolder my-5">Student Registration Form</h1>
+                <h1 class="fw-bolder my-3">Student Registration Form</h1>
                 <div class="row">
                     <div class="col-md-5">
                         <div class="input-group">
                             <span class="input-group-text ">Date</span>
-                            <input type="date" class="form-control bg-secondary-subtle " name="date" ngModel>
+                            <input type="date" class="form-control bg-secondary-subtle " name="date" >
                          </div>
                        </div>
                 </div>
                
-                   <h3 class="text-uppercase m-3 fw-bold">Personal Information :</h3><hr>
+                   <h3 class="text-uppercase m-1 fw-bold">Personal Information :</h3><hr>
                     <div class="input-group">
                         <span class="input-group-text">Full Name</span>
-                        <input type="text" aria-label="fullName" class="form-control bg-secondary-subtle " name="fullName" ngModel>
+                        <input type="text" aria-label="fullName" class="form-control bg-secondary-subtle " name="fullName" [ngModel]="formData.fullName" required>
                       </div>
 
                       <div class="input-group">
                         <span class="input-group-text">Birth Date</span>
-                        <input type="date" aria-label="birth" class="form-control bg-secondary-subtle " name="birthDate" ngModel>
+                        <input type="number" aria-label="birth" class="form-control bg-secondary-subtle " name="birthDate" [ngModel]="formData.birthDate">
                       </div>
                      
                       <div ngModelGroup="contactInfo">
                              
-                      <h3 class="text-uppercase m-3 fw-bold mt-5 ">Contact Information :</h3><hr>
+                      <h3 class="text-uppercase m-1 fw-bold mt-3 ">Contact Information :</h3><hr>
 
                       <div class="input-group">
                         <span class="input-group-text">Address</span>
-                        <input type="text" aria-label="address" class="form-control bg-secondary-subtle " name="address" ngModel>
+                        <input type="text" aria-label="address" class="form-control bg-secondary-subtle " name="address" [ngModel]="formData.address">
                       </div>
 
                       <div class="input-group">
                         <span class="input-group-text">City</span>
-                        <input type="text" aria-label="city" class="form-control bg-secondary-subtle " name="city" ngModel>
+                        <input type="text" aria-label="city" class="form-control bg-secondary-subtle " name="city" [ngModel]="formData.city">
                         <span class="input-group-text">State</span>
-                        <input type="text" aria-label="state" class="form-control bg-secondary-subtle " name="state" ngModel>
+                        <input type="text" aria-label="state" class="form-control bg-secondary-subtle " name="state" [ngModel]="formData.state">
                       </div>
                       <div class="input-group">
                         <span class="input-group-text">Zipcode</span>
-                        <input type="number" aria-label="zipcode" class="form-control bg-secondary-subtle " name="zipcode" ngModel>
+                        <input type="zip" aria-label="zipcode" class="form-control bg-secondary-subtle " name="zipcode" [ngModel]="formData.zipcode">
                         <span class="input-group-text">Country</span>
-                        <input type="text" aria-label="country" class="form-control bg-secondary-subtle " name="country" ngModel>
+                        <input type="text" aria-label="country" class="form-control bg-secondary-subtle " name="country" [ngModel]="formData.country">
                       </div>
                       <div class="input-group">
                         <span class="input-group-text">Phone</span>
-                        <input type="number" aria-label="phone" class="form-control bg-secondary-subtle " ngModel>
+                        <input type="number" aria-label="phone" class="form-control bg-secondary-subtle " name="phone" [ngModel]="formData.phone">
                         <span class="input-group-text">Email</span>
-                        <input type="text" aria-label="email" class="form-control bg-secondary-subtle " name="email" ngModel>
+                        <input type="email" aria-label="email" class="form-control bg-secondary-subtle " name="email" [ngModel]="formData.email">
                       </div>
-                      <div class="input-group">
+                      <!-- <div class="input-group">
                         <span class="input-group-text">Membership Type</span>
                         <input type="radio" aria-label="regular" class="form-control bg-secondary-subtle " ngModel >
-                      </div>
+                      </div> -->
                     </div> 
 
                     <div ngModelGroup="courseInfo">
-                        <h3 class="text-uppercase m-3 fw-bold mt-5 ">Course Information :</h3><hr>
+                        <h3 class="text-uppercase m-3 fw-bold mt-3 ">Course Information :</h3><hr>
 
                         <div class="input-group">
                            <span class="input-group-text">Course Name</span>
-                           <input type="text" aria-label="course" class="form-control bg-secondary-subtle " name="course" ngModel>
+                           <input type="text" aria-label="course" class="form-control bg-secondary-subtle " name="course" [ngModel]="formData.course">
                          </div>
-                         <div class="input-group">
+                         <!-- <div class="input-group">
                            <span class="input-group-text">Payment Details</span>
                            <input type="radio" aria-label="payment" class="form-control bg-secondary-subtle " ngModel>
-                         </div>
+                         </div> -->
                          <div class="input-group">
                            <span class="input-group-text">Comment</span>
-                           <input type="text" aria-label="comment" class="form-control bg-secondary-subtle " name="comment" ngModel>
+                           <input type="text" aria-label="comment" class="form-control bg-secondary-subtle " name="comment" [ngModel]="formData.comment">
                          </div>
        
                     </div>

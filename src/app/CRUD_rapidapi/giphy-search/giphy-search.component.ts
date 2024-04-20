@@ -4,7 +4,8 @@ import { GiphyService } from 'src/app/services/giphy.service';
 @Component({
   selector: 'app-giphy-search',
   templateUrl: './giphy-search.component.html',
-  styleUrls: ['./giphy-search.component.css']
+  styleUrls: ['./giphy-search.component.css'],
+ 
 })
 export class GiphySearchComponent implements OnInit {
 
@@ -44,19 +45,19 @@ export class GiphySearchComponent implements OnInit {
 
 
 
-previousPage() {
-  if (this.currentPage > 1) {
-    this.currentPage--;
-    this.fetchTrendingGifs();
-  }
-}
+// previousPage() {
+//   if (this.currentPage > 1) {
+//     this.currentPage--;
+//     this.fetchTrendingGifs();
+//   }
+// }
 
-nextPage() {
-  if ((this.currentPage * this.pageSize) < this.gifs.length) {
-    this.currentPage++;
-    this.fetchTrendingGifs();
-  }
-}
+// nextPage() {
+//   if ((this.currentPage * this.pageSize) < this.gifs.length) {
+//     this.currentPage++;
+//     this.fetchTrendingGifs();
+//   }
+// }
 
 // get totalPages(): number {
 //   return Math.ceil(this.totalCount / this.pageSize);
