@@ -1,0 +1,28 @@
+<div class="container my-5">
+
+    <div class="box">
+        <div class="col-md-6 bg-warning-subtle p-3">    
+        <h4>String interpolation</h4>
+        <p>First Name: {{firstname}}</p>
+        <p>Last Name: {{lastName}}</p>
+        <p>{{data.name}} {{data.id}}</p>
+        </div>
+    </div>
+    
+    <div class="box">
+        <div class="col-md-6 bg-success-subtle  p-3 ">
+           <h4>Property binding</h4>
+           <img [src]="imageUrl" alt="love image"><br>
+           <button class="btn btn-success mt-2" [disabled]="isSubmitted">click me</button>
+        </div>
+    </div>
+    
+    <div class="box">
+        <div class="col-md-6 bg-info-subtle p-3">
+            <h4>Event binding</h4>
+            <button class="btn btn-info" (click)="onSubmit()">Click event</button>
+        </div>
+    </div>
+
+</div>
+

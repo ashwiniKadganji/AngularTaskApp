@@ -1,12 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { RapidapiService } from './services/rapidapi.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-
+export class AppComponent implements OnInit {
+  /**
+   *
+   */
+  constructor(private _rapidService: RapidapiService) {}
 
   isDestroy = true ;
   color : string = 'red';
@@ -41,6 +45,7 @@ Break up your page with a horizontal rule or two. </p>
 </body>
 </html>`;
 
+
   sendData(val: any) {
      this.firstName = val;
      
@@ -53,4 +58,16 @@ Break up your page with a horizontal rule or two. </p>
       OnDestroy() {
          this.isDestroy = false;
         }
+
+        ThrowErrors() {
+          throw new Error('This is custom error');
+          }
+
+          ngOnInit(): void {
+
+            this._rapidService.getYahooFinance().subscribe(res=>{
+              console.log(res);
+              
+            })
+          }
 }

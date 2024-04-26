@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { ErrorHandler, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -7,7 +7,7 @@ import { TemplateDrivenFromComponent } from './forms/template-driven-from/templa
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RapidapiComponent } from './CRUD_rapidapi/rapidapi/rapidapi.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { LoginFormComponent } from './forms/login-form/login-form.component';
 import { PipeComponent } from './Pipe/pipe/pipe.component';
 import { AsyncpipeComponent } from './Pipe/asyncpipe/asyncpipe.component';
@@ -29,10 +29,13 @@ import { PostlistComponent } from './smallApp/postlist/postlist.component';
 import { PostDetailsComponent } from './smallApp/post-details/post-details.component';
 import { MatButtonModule, MatMenuModule } from '@angular/material';
 import { LogoutbtnComponent } from './smallApp/logoutbtn/logoutbtn.component';
-import { ProductsModule } from './smallApp/product/products.module';
 import { BeautyProductComponent } from './smallApp/beauty-product/beauty-product.component';
 import { HookComponent } from './Hook/hook/hook.component';
 import { RxJsComponent } from './RxJs/rx-js/rx-js.component';
+import { GlobaErrorHandlerService } from './globa-error-handler.service';
+import { ErrorInterceptor } from './error.interceptor';
+import { DatabindingComponent } from './databinding/databinding.component';
+import { OneWayDataBindingComponent } from './one-way-data-binding/one-way-data-binding.component';
 
 
 
@@ -62,7 +65,9 @@ import { RxJsComponent } from './RxJs/rx-js/rx-js.component';
     LogoutbtnComponent,
     BeautyProductComponent,
     HookComponent,
-    RxJsComponent
+    RxJsComponent,
+    DatabindingComponent,
+    OneWayDataBindingComponent
   
   ],
   imports: [
@@ -78,7 +83,17 @@ import { RxJsComponent } from './RxJs/rx-js/rx-js.component';
     
     
   ],
-  providers: [],
+  providers: [
+    {
+      provide: ErrorHandler,
+      useClass : GlobaErrorHandlerService
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ErrorInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { 

@@ -1,0 +1,44 @@
+<div class="box">
+    <div class="col-md-6 bg-warning-subtle p-3 ms-3 ">
+        
+     <h4>Task 1</h4>
+     <p>Assignments Template Data Binding:</p>
+        <p>● In the DataBindingComponent, create an input field (e.g., input).</p>
+       <p> ● Bind the input field’s value to a property in the component using
+        interpolation.</p>
+       <p> ● Display the value of the input field below it</p>
+
+        <p>{{userName}}</p>
+    <input type="text" class="form-control" placeholder="Enter name: " (blur)="UserName($event)">
+
+    </div>
+</div>
+
+<div class="box">
+    <div class="col-md-6 bg-primary-subtle p-3 ms-3 ">
+        <h4>Task 2</h4>
+      <p>Event Binding:</p>
+       <p> ● Add a button (e.g., button) to the template.</p>
+       <p> ● Bind a click event to the button using event binding.</p>
+        <p>● When the button is clicked, update the component property (e.g., change the input
+        field value).</p>
+
+        <p>{{cityName}}</p>
+        <input type="text" class="form-control" placeholder="Enter City: " #name>
+        <button class="btn btn-primary mt-3" (click)="OnCity(name.value)">Click me</button>
+    </div>
+</div>
+
+<div class="box">
+    <div class="col-md-6 bg-danger-subtle p-3 ms-3 ">
+        <h4>Task 3</h4>
+      <p>One-Way Data Binding:</p>
+       <p>● Create a new component called OneWayComponent.</p>
+       <p>● In this component, have an input field where users can type their name</p>
+        <p>● Display the typed name below the input field in an h2 tag using interpolation</p>
+        <p>● Make sure that the displayed name updates as the user types in the input field</p>
+
+        <h2>{{Name}}</h2>
+        <input type="text" class="form-control" placeholder="Enter City: " (blur)="onDisplay($event)">
+    </div>
+</div>
