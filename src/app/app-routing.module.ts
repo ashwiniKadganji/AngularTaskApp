@@ -13,6 +13,7 @@ import { RegistrationFormComponent } from './forms/registration-form/registratio
 import { CanDeActivateGuard } from './guards/can-de-activate.guard';
 import { BeautyProductComponent } from './smallApp/beauty-product/beauty-product.component';
 import { RxJsComponent } from './RxJs/rx-js/rx-js.component';
+import { RapidapiComponent } from './CRUD_rapidapi/rapidapi/rapidapi.component';
 
 const routes: Routes = [
    { path : '' , redirectTo : 'login' , pathMatch: 'full'},
@@ -36,6 +37,7 @@ const routes: Routes = [
   { path : 'register' ,component : RegistrationFormComponent , canDeactivate: [CanDeActivateGuard] },
   { path : 'postDetails/:id', component: PostDetailsComponent },
   { path: 'rxjs' , component: RxJsComponent },
+  { path:'rapidapi', component: RapidapiComponent },
   { path : '**', component: PageNotFoundComponent }
 ];
 

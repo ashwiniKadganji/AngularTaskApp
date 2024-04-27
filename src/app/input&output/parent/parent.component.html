@@ -1,0 +1,8 @@
+
+<app-child (messageToParent)="receiveMsg($event)" [childMessage]="parentMessage" [childMessage1]="parentMessage1"></app-child>
+
+<div class="box">
+    <div class="col-md-6 bg-warning p-3 m-3 ">
+        <h4>@Output decorator from parent</h4>
+      <p><i><b>{{msg}}</b></i></p>
+</div>

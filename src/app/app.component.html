@@ -229,6 +229,11 @@
                       <li class="nav-item">
                         <a class="nav-link" routerLink="./rxjs" routerLinkActive="active">RxJs</a>
                       </li>
+
+                      
+                      <li class="nav-item">
+                        <a class="nav-link" routerLink="./rapidapi" routerLinkActive="active">RapidAPI</a>
+                      </li>
                     </ul>
                   </div>
                     <div>
@@ -255,9 +260,12 @@
 <app-hook [formChild]="firstName" [fromParentColor] = "color" *ngIf="isDestroy" >
   <h1 #child >This is h1 tag from content projection</h1>
 </app-hook> --> 
-
+<!-- 
 <app-databinding></app-databinding>
-<button (click)="ThrowErrors()">ThowError</button>
+<button (click)="ThrowErrors()">ThowError</button> -->
 
 <app-one-way-data-binding></app-one-way-data-binding>
+<app-two-way-data-binding></app-two-way-data-binding>
+<app-parent></app-parent>
+
 <router-outlet></router-outlet>

@@ -36,6 +36,11 @@ import { GlobaErrorHandlerService } from './globa-error-handler.service';
 import { ErrorInterceptor } from './error.interceptor';
 import { DatabindingComponent } from './databinding/databinding.component';
 import { OneWayDataBindingComponent } from './one-way-data-binding/one-way-data-binding.component';
+import { TwoWayDataBindingComponent } from './two-way-data-binding/two-way-data-binding.component';
+import { HeaderInterceptor } from './httpinterceptor/header.interceptor';
+import { ChildComponent } from './input&output/child/child.component';
+import { ParentComponent } from './input&output/parent/parent.component';
+import { ResponseInterceptor } from './httpinterceptor/response.interceptor';
 
 
 
@@ -67,7 +72,10 @@ import { OneWayDataBindingComponent } from './one-way-data-binding/one-way-data-
     HookComponent,
     RxJsComponent,
     DatabindingComponent,
-    OneWayDataBindingComponent
+    OneWayDataBindingComponent,
+    TwoWayDataBindingComponent,
+    ChildComponent,
+    ParentComponent
   
   ],
   imports: [
@@ -84,6 +92,16 @@ import { OneWayDataBindingComponent } from './one-way-data-binding/one-way-data-
     
   ],
   providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HeaderInterceptor,
+      multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ResponseInterceptor,
+      multi: true
+    },
     {
       provide: ErrorHandler,
       useClass : GlobaErrorHandlerService

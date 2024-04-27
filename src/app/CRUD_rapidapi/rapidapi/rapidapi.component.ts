@@ -23,6 +23,11 @@ constructor(private _rapidApiService : RapidapiService) { }
       console.log('Rapid get called!!', res);
       this.newsData = res.news;
       this.quotesData = res.quotes;
+    });
+
+    this._rapidApiService.getSummury().subscribe(res =>{
+      console.log('getSummary is called',res);
+      
     })
   }
 

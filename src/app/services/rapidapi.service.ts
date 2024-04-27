@@ -8,6 +8,9 @@ import { Observable } from 'rxjs';
 export class RapidapiService {
 
   apiUrl = 'https://apidojo-yahoo-finance-v1.p.rapidapi.com/auto-complete';
+
+  apiURL = 'https://apidojo-yahoo-finance-v1.p.rapidapi.com/stock/v2/get-summary';
+
   // onject the httpclient to make htttp request
   constructor(private httpClient: HttpClient) { }
 
@@ -20,16 +23,38 @@ export class RapidapiService {
 
     // creating new HttpHeader object
 
-    let headers = new HttpHeaders({
-      'X-RapidAPI-Key': '31a7304111msh1abc9c37df6b00cp1616b3jsn853734b6cb7d',
-      'X-RapidAPI-Host': 'apidojo-yahoo-finance-v1.p.rapidapi.com'
-    });
+    // let headers = new HttpHeaders({
+    //   'X-RapidAPI-Key': '31a7304111msh1abc9c37df6b00cp1616b3jsn853734b6cb7d',
+    //   'X-RapidAPI-Host': 'apidojo-yahoo-finance-v1.p.rapidapi.com'
+    // });
 
     // adding HttpParams and HttpHeaders to options
      const options = {
-      headers : headers,
+      // headers : headers,
       params :  params
      }
     return this.httpClient.get(this.apiUrl,options);
+  }
+  getSummury(){
+
+    //craeting httpparams object
+
+    let params = new HttpParams();
+    params = params.append('symbol' ,'AMRN');
+    params = params.append('region' ,'US');
+
+    // craeting new  httpheaders object
+
+    // let headers = new HttpHeaders({
+    //   'X-RapidAPI-Key': '31a7304111msh1abc9c37df6b00cp1616b3jsn853734b6cb7d',
+    //   'X-RapidAPI-Host': 'apidojo-yahoo-finance-v1.p.rapidapi.com'
+    // })
+
+    const Options = {
+      // headers : headers,
+      params : params
+    } 
+    
+     return this.httpClient.get<any>(this.apiURL,Options);
   }
 }
