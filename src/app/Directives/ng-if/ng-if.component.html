@@ -1,0 +1,32 @@
+<div class="box">
+    <div class="col-md-6 p-3 bg-success-subtle rounded shadow ms-3">
+    <h4 appMyDir>*ngIf Structural Directive</h4>  
+
+<div *ngIf="!isShow; else enable">
+    <p>Hii am Ashwini...</p>
+</div>
+
+<div >
+   <p>Let Continue our journey with hapiness..</p>
+</div>
+
+<ng-template #enable>
+    <p >I am in Banglore now, Working as a Angular developer, I am so happy with this new journey...</p>
+</ng-template>
+
+<hr>
+
+<div *ngIf="isLoggedIn; else isLoggedOut">
+    <p>Welcome, Jack</p>
+</div>
+
+<ng-template #isLoggedOut>
+    <p>Please log into continue </p>
+</ng-template>
+
+<hr>
+
+<p *ngIf="isDisplay">this content is show when the condition is true otherwise hide </p>
+
+    </div>
+</div>

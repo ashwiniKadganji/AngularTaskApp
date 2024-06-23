@@ -1,0 +1,29 @@
+
+<div class="box">
+    <div class="col-md-6 rounded shadow p-3 ms-3 bg-primary-subtle">
+
+        <h4 appMyDir>*ngFor Structural Directive </h4>
+        <table class="table table-striped ">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Title</th>
+                <th scope="col">Director</th>
+                <th scope="col">Cast</th>
+                <th scope="col">Release Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of movie; let i = index">
+                
+                <td>{{i+1}}</td>
+                <td>{{item.title}}</td>
+                <td>{{item.director}}</td>
+                <td>{{item.cast}}</td>
+                <td>{{item.releaseDate}}</td>
+              </tr>
+              
+            </tbody>
+          </table>
+    </div>
+</div>

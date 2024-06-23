@@ -41,6 +41,16 @@ import { HeaderInterceptor } from './httpinterceptor/header.interceptor';
 import { ChildComponent } from './input&output/child/child.component';
 import { ParentComponent } from './input&output/parent/parent.component';
 import { ResponseInterceptor } from './httpinterceptor/response.interceptor';
+import { NgIfComponent } from './Directives/ng-if/ng-if.component';
+import { NgForComponent } from './Directives/ng-for/ng-for.component';
+import { NgSitchComponent } from './Directives/ng-switch/ng-sitch.component';
+import { NgStyleComponent } from './Directives/ng-style/ng-style.component';
+import { NgClassComponent } from './Directives/ng-class/ng-class.component';
+import { MyDirDirective } from './my-dir.directive';
+import { GridComponent } from './ngmaterial/grid/grid.component';
+import {MatGridListModule} from '@angular/material/grid-list';
+import { TodoComponent } from './CRUD_Todo/todo/todo.component';
+
 
 
 
@@ -75,7 +85,15 @@ import { ResponseInterceptor } from './httpinterceptor/response.interceptor';
     OneWayDataBindingComponent,
     TwoWayDataBindingComponent,
     ChildComponent,
-    ParentComponent
+    ParentComponent,
+    NgIfComponent,
+    NgForComponent,
+    NgSitchComponent,
+    NgStyleComponent,
+    NgClassComponent,
+    MyDirDirective,
+    GridComponent,
+    TodoComponent
   
   ],
   imports: [
@@ -88,6 +106,7 @@ import { ResponseInterceptor } from './httpinterceptor/response.interceptor';
     MatMenuModule,
     MatButtonModule,
     AppRoutingModule,
+    MatGridListModule
     
     
   ],

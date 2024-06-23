@@ -17,10 +17,10 @@ export class HeaderInterceptor implements HttpInterceptor {
 
     const myRequest = request.clone({
         
-      setHeaders: {
-        'X-RapidAPI-Key' : '31a7304111msh1abc9c37df6b00cp1616b3jsn853734b6cb7d',
-        'X-RapidAPI-Host': 'apidojo-yahoo-finance-v1.p.rapidapi.com',
-      },
+      // setHeaders: {
+      //   'X-RapidAPI-Key' : '31a7304111msh1abc9c37df6b00cp1616b3jsn853734b6cb7d',
+      //   'X-RapidAPI-Host': 'apidojo-yahoo-finance-v1.p.rapidapi.com',
+      // },
 
     });
     
